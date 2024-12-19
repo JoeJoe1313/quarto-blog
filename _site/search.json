@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/fourier/index.html",
+    "href": "posts/fourier/index.html",
+    "title": "Fourier Method for the Wave Equation",
+    "section": "",
+    "text": "In this post we are going to explore the Fourier method for solving the 1D and 2D wave equations. The method is more known under the name of the method of separation of variables.\n\nFixed String (1D Wave Equation)\nFirst, let’s take a look at the model of a string with length \\(l\\) which is also fixed at both ends:\n\\[\n\\left\\{\\begin{align*}\nu_{tt} = a^2 u_{xx}, \\\\\nu(x, 0) = \\varphi_1(x),\\\\\nu_t(x, 0) = \\varphi_2(x), \\\\\nu(0, t) = u(l, t) = 0.\n\\end{align*}\\right.\n\\]\nWe start solving the equation by taking into account only the boundary conditions \\(u(0, t) = u(l, t) = 0\\). The idea is to find solution \\(u(x, t)\\) of the form\n\\[\nu(x, t) = X(x)T(t).\n\\]\nWe substitute this form of the solution into the wave equation and get\n\\[\n\\frac{1}{a^2} T^{\\prime\\prime}(t)X(x) = T(t)X^{\\prime\\prime}(x),\n\\]\nfurther divding by \\(X(x)T(t)\\) leads to\n\\[\n\\frac{1}{a^2} \\frac{T^{\\prime\\prime}(t)}{T(t)} = \\frac{X^{\\prime\\prime}(x)}{X(x)}.\n\\]\n…\n\\[\n\\frac{1}{a^2} \\frac{T^{\\prime\\prime}(t)}{T(t)} = \\frac{X^{\\prime\\prime}(x)}{X(x)} = -\\lambda,\n\\]\nproducing the following two equeations:\n\\[\nT^{\\prime\\prime}(t) + a^2 \\lambda T(t) = 0\n\\]\nand\n\\[\nX^{\\prime\\prime}(x) + \\lambda X(x) = 0.\n\\]\nLet’s begin with solving the second equation. The boundary conditions give\n\\[\nX(0)T(t) = 0 \\quad \\text{and} \\quad X(l)T(t) = 0.\n\\]\nBecause we are interested only in non-trivial solutions and thus \\(T \\neq 0\\), we have\n\\[\nX(0) = 0 \\quad \\text{and} \\quad X(l) = 0.\n\\]\nNow, we have to find the non-trivial solutions for \\(X(x)\\) satisfying\n\\[\n\\left\\{\\begin{align*}\nX^{\\prime\\prime}(x) + \\lambda X(x) = 0, \\\\\nX(0) = 0, \\\\\nX(l) = 0.\n\\end{align*}\\right.\n\\]\nThe above problem is an example of the so called Sturm-Liouville problem.\n\n\nSturm-Liouville problem\n…"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "quarto-blog",
+    "section": "",
+    "text": "Fourier Method for the Wave Equation\n\n\n\n\n\n\nmathematics\n\n\n\n\n\n\n\n\n\nDec 19, 2024\n\n\nJoJo\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nDec 18, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nDec 16, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  }
+]
