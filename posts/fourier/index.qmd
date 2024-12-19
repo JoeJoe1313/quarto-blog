@@ -8,6 +8,10 @@ image: "membrane.png"
 
 In this post we are going to explore the Fourier method for solving the 1D and 2D wave equations. The method is more known under the name of the method of separation of variables.
 
+# Introduction
+
+...
+
 # Fixed String (1D Wave Equation)
 
 First, let's take a look at the model of a string with length $l$ which is also fixed at both ends:
