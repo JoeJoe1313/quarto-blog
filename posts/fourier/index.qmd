@@ -6,7 +6,7 @@ categories: [mathematics]
 image: "membrane.png"
 ---
 
-In this post we are going to explore the Fourier method for solving the 1D and 2D wave equations. The method is more known under the name of the method of separation of variables.
+In this post we are going to explore the Fourier method for solving the 1D and 2D wave equations. The method is more known under the name of the method of separation of variables. Test.
 
 # Introduction
 
