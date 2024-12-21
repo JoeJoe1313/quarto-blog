@@ -15,3 +15,6 @@ format:
     theme: flatly
     html-math-method: mathjax
     css: styles.css
+
+execute:
+  eval: false
