@@ -13,5 +13,5 @@ website:
 format:
   html:
     theme: flatly
-    html-math-method: mathml
+    html-math-method: mathjax
     css: styles.css
