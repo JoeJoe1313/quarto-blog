@@ -13,4 +13,5 @@ website:
 format:
   html:
     theme: flatly
+    html-math-method: katex
     css: styles.css
