@@ -18,3 +18,4 @@ format:
 
 execute:
   eval: false
+  freeze: true
