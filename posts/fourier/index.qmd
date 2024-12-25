@@ -6,20 +6,22 @@ categories: [mathematics]
 image: "membrane.png"
 ---
 
-In this post we are going to explore the Fourier method for solving the 1D and 2D wave equations. The method is more known under the name of the method of separation of variables.
+In this post we are going to explore the Fourier method for solving the 1D and 2D wave equations. The method is more known under the name of the method of separation of variables. For the 1D wave equation we are going to show the application of the method to a fixed string, and for the 2D wave equation we are going to apply the method to a rectangular membrane and a circular membrane. We are also going to attempt to outline the physical interpretations of all scenarios.
 
-# Fixed String (1D Wave Equation)
+# 1D Wave Equation
+
+## Fixed String
 
 First, let's take a look at the model of a string with length $l$ which is also fixed at both ends:
 
-$$
-\left\{\begin{align*}
+\begin{equation}
+\left\{\begin{aligned}
 u_{tt} = a^2 u_{xx}, \\ 
 u(x, 0) = \varphi_1(x),\\
 u_t(x, 0) = \varphi_2(x), \\
 u(0, t) = u(l, t) = 0.
-\end{align*}\right.
-$$
+\end{aligned}\right.
+\end{equation}
 
 We start solving the equation by taking into account only the boundary conditions $u(0, t) = u(l, t) = 0$. The idea is to find solution $u(x, t)$ of the form
 
@@ -39,7 +41,7 @@ $$
 \frac{1}{a^2} \frac{T^{\prime\prime}(t)}{T(t)} = \frac{X^{\prime\prime}(x)}{X(x)}.
 $$
 
-...
+We have two functions of independent variables which are equal. This is only possible if they are equal to the same constant. Therefore, let
 
 $$
 \frac{1}{a^2} \frac{T^{\prime\prime}(t)}{T(t)} = \frac{X^{\prime\prime}(x)}{X(x)} = -\lambda,
@@ -209,4 +211,98 @@ $$
 B_k = \frac{2}{ak\pi} \int_{0}^{l} \varphi_2(x) \sin{\left(\frac{k \pi}{l}x\right)} \mathrm{d}x.
 $$
 
-...
+We are left with the task of the covergence of the infinite series. We have to explore the following series
+
+$$
+|u(x, t)| \leq \sum_{k=1}^{\infty}(|A_k| + |B_k|),
+$$
+
+$$
+|u_t(x, t)| \leq \sum_{k=1}^{\infty}\frac{ak\pi}{l}(|A_k| + |B_k|),
+$$
+
+$$
+|u_x(x, t)| \leq \sum_{k=1}^{\infty}\frac{k\pi}{l}(|A_k| + |B_k|),
+$$
+
+$$
+|u_{tt}(x, t)| \leq \sum_{k=1}^{\infty}\frac{a^2 k^2 \pi^2}{l^2}(|A_k| + |B_k|),
+$$
+
+$$
+|u_{xx}(x, t)| \leq \sum_{k=1}^{\infty}\frac{k^2 \pi^2}{l^2}(|A_k| + |B_k|).
+$$
+
+If the series on the right side (majorizing series) converge then the series on the left would also converge and the needed differentiation would exist. It is enough (why?) for the following series to converge
+
+$$
+\sum_{k=1}^{\infty} k^j \left(|\varphi_k^{(1)}| + \frac{2}{ak\pi}|\varphi_k^{(2)}|\right), j = 0, 1, 2.
+$$
+
+This is possible only if 
+
+$$
+\left\{\begin{align*}
+\sum_{k=1}^{\infty} k^j |\varphi_k^{(1)}|, \\
+\sum_{k=1}^{\infty} k^{j-1} |\varphi_k^{(2)}|,
+\end{align*}\right. \quad j = 0, 1, 2.
+$$
+
+converge. From Calculus we know (theorem) that if $\varphi(x)$ is $m$-times differentiable then
+
+$$
+\sum_{k=1}^{\infty} k^{m-1} |\varphi_k|
+$$
+
+convergres. Therefore, in order for all the majorzing series to converge it is enough $\varphi_1(x)$ to be $3$-times differentiable, and $\varphi_2(x)$ to be $2$-times differentiable.
+
+Finally, we should note a few things about the expansion of $\varphi_1(x)$ and $\varphi_2(x)$ into sine series. We have to note that in order to do that the function needs to be continued as an odd function which my lead to loss of the regularity of the lower derivatives. Let $\tilde{\varphi}_1(x)$ be the continuation of $\varphi_1(x)$ as an odd function (see the Figure below) defined as
+
+<center>
+![Odd continuation of a function](./images/odd_continuation.png){width=50%}
+</center>
+
+$$
+\tilde{\varphi}_1(x) = \left\{\begin{align*}
+\varphi_1(x), \quad 0 \leq x \leq l, \\
+-\varphi_1(-x), \quad -l \leq x \leq 0.
+\end{align*}\right.
+$$
+
+Hence, in order for it to be continous and continously differentibale we need to enforce the following condition
+
+$$
+\varphi_1(0) = \varphi_1(l) = 0.
+$$
+
+To summarise, in order for $\sum_{k=1}^{\infty} \varphi_k^{(1)} \sin{\left( \frac{k\pi}{l}x\right)}$ to converge in $[0, l]$ it is necessary to enforce the above conditions to have zero values at both ends of the interval. As for the second derivative, if it exists it would be continuous as well. Similarly, for the third derivative to exist we enforce
+
+$$
+\varphi_1^{\prime\prime}(0) = \varphi_1^{\prime\prime}(l) = 0
+$$
+
+and obtain the corresponding necessary condition
+
+$$
+\varphi_2(0) = \varphi_2(l) = 0.
+$$
+
+Finally, after these enforced conditions we can conclude that (tehorem)
+
+$$
+u(x, t) = \sum_{k=1}^{\infty} \left(A_k \cos{\left(\frac{ak\pi}{l}t\right)} + B_k \sin{\left(\frac{ak\pi}{l}t\right)}\right) \sin{\left(\frac{k \pi x}{l}\right)}
+$$
+
+is a regular solution of the problem.
+
+**Physical interpretation:** TBD
+
+# 2D Wave Equation
+
+## Rectangular Membrane
+
+TBD
+
+## Circular Membrane
+
+TBD
