@@ -358,12 +358,6 @@ Using the $100$-th partial Fourier sum, below is shown the animated solution for
 
 ```{python}
 #| code-fold: true
-#| code-summary: "Click to expand the code"
-{{< include code/fixed_string.py >}}
-```
-
-```{python}
-#| code-fold: true
 import plotly.io as pio
 import numpy as np
 import pandas as pd
