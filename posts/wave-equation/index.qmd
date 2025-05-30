@@ -4,6 +4,7 @@ author: "JoJo"
 date: "2024-12-19"
 categories: [mathematics, python]
 image: "./images/rectangular_membrane_1_animation.gif"
+draft: true
 ---
 
 Partial differential equations...
